@@ -82,4 +82,14 @@ class HorizonStats
     {
         return app(JobRepository::class)->countRecent();
     }
+
+    public function queueWithMaximumRuntime()
+    {
+        return app(MetricsRepository::class)->queueWithMaximumRuntime();
+    }
+
+    public function queueWithMaximumThroughput()
+    {
+        return app(MetricsRepository::class)->queueWithMaximumThroughput();
+    }
 }
