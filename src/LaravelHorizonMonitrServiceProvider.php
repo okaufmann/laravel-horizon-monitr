@@ -2,9 +2,9 @@
 
 namespace Okaufmann\LaravelHorizonMonitr;
 
+use Okaufmann\LaravelHorizonMonitr\Commands\LaravelHorizonMonitrCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use Okaufmann\LaravelHorizonMonitr\Commands\LaravelHorizonMonitrCommand;
 
 class LaravelHorizonMonitrServiceProvider extends PackageServiceProvider
 {

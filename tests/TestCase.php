@@ -3,8 +3,8 @@
 namespace Okaufmann\LaravelHorizonMonitr\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Orchestra\Testbench\TestCase as Orchestra;
 use Okaufmann\LaravelHorizonMonitr\LaravelHorizonMonitrServiceProvider;
+use Orchestra\Testbench\TestCase as Orchestra;
 
 class TestCase extends Orchestra
 {
