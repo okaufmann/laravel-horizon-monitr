@@ -31,8 +31,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Okaufmann\\LaravelHorizonMonitr\\": "src",
-            "Okaufmann\\LaravelHorizonMonitr\\Database\\Factories\\": "database/factories"
+            "Okaufmann\\LaravelHorizonMonitr\\": "src"
         }
     },
     "autoload-dev": {
@@ -54,7 +53,7 @@
                 "Okaufmann\\LaravelHorizonMonitr\\LaravelHorizonMonitrServiceProvider"
             ],
             "aliases": {
-                "LaravelHorizonMonitr": "Okaufmann\\LaravelHorizonMonitr\\LaravelHorizonMonitrFacade"
+                "LaravelHorizonMonitr": "Okaufmann\\LaravelHorizonMonitr\\HorizonMonitrFacade"
             }
         }
     },

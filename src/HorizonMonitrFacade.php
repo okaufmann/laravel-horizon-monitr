@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Facade;
 /**
  * @see \Okaufmann\LaravelHorizonMonitr\LaravelHorizonMonitr
  */
-class LaravelHorizonMonitrFacade extends Facade
+class HorizonMonitrFacade extends Facade
 {
     protected static function getFacadeAccessor()
     {

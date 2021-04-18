@@ -22,5 +22,7 @@ class LaravelHorizonMonitrServiceProvider extends PackageServiceProvider
         $this->app->singleton(Client::class, function () {
             return new Client(config('laravel-horizon-monitr.monitr'));
         });
+
+        $this->app->alias(HorizonMonitr::class, 'laravel-horizon-monitr');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace Okaufmann\LaravelHorizonMonitr;
+namespace Okaufmann\LaravelHorizonMonitr\Horizon;
 
 use Laravel\Horizon\Contracts\JobRepository;
 use Laravel\Horizon\Contracts\MasterSupervisorRepository;
@@ -8,7 +8,7 @@ use Laravel\Horizon\Contracts\MetricsRepository;
 use Laravel\Horizon\Contracts\WorkloadRepository;
 use Laravel\Horizon\ProcessInspector;
 
-class HorizonStats
+class StatsCollector
 {
     public function getCurrentProcessesPerQueue(): array
     {
