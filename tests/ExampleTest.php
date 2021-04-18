@@ -1,6 +1,6 @@
 <?php
 
-namespace VendorName\Skeleton\Tests;
+namespace Okaufmann\LaravelHorizonMonitr\Tests;
 
 class ExampleTest extends TestCase
 {

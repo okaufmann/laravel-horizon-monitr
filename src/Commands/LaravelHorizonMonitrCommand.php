@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton\Commands;
+namespace Okaufmann\LaravelHorizonMonitr\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class LaravelHorizonMonitrCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel-horizon-monitr';
 
     public $description = 'My command';
 

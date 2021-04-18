@@ -1,12 +1,12 @@
 <?php
 
-namespace VendorName\Skeleton;
+namespace Okaufmann\LaravelHorizonMonitr;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use VendorName\Skeleton\Commands\SkeletonCommand;
+use Okaufmann\LaravelHorizonMonitr\Commands\LaravelHorizonMonitrCommand;
 
-class SkeletonServiceProvider extends PackageServiceProvider
+class LaravelHorizonMonitrServiceProvider extends PackageServiceProvider
 {
     public function configurePackage(Package $package): void
     {
@@ -16,10 +16,10 @@ class SkeletonServiceProvider extends PackageServiceProvider
          * More info: https://github.com/spatie/laravel-package-tools
          */
         $package
-            ->name('skeleton')
+            ->name('laravel-horizon-monitr')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_skeleton_table')
-            ->hasCommand(SkeletonCommand::class);
+            ->hasMigration('create_laravel-horizon-monitr_table')
+            ->hasCommand(LaravelHorizonMonitrCommand::class);
     }
 }
