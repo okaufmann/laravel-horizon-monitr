@@ -23,10 +23,17 @@ class SendHorizonStats extends Command
             $horizon->getCurrentWorkload(),
             $horizon->getCurrentWorkloadWaitTimes(),
             $horizon->getRecentlyFailedJobsCount(),
-            (bool) $horizon->getHorizonStatus(),
+            $horizon->getHorizonStatus() === 1,
             $horizon->getJobsPerMinute(),
             $horizon->getRecentJobsCount(),
+            config('horizon.trim.recent'),
             $horizon->getOrphanedProcesses(),
+            gethostname(),
+            [
+                'redis_prefix' => config('database.redis.options.prefix'),
+                'redis_db' => config('database.redis.default.database'),
+                'redis_cache_db' => config('database.redis.cache.database'),
+            ]
         );
 
         $monitr->sendHorizonStats($stats);

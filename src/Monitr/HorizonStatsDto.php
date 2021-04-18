@@ -13,7 +13,10 @@ class HorizonStatsDto implements Arrayable
     protected bool $horizonRunning;
     protected int $jobsPerMinute;
     protected int $recentJobsCount;
+    protected int $recentTime;
     protected int $orphanedProcesses;
+    protected string $hostname;
+    protected array $queueConfig;
 
     public function __construct(
         array $queueProcesses,
@@ -23,7 +26,10 @@ class HorizonStatsDto implements Arrayable
         bool $horizonRunning,
         int $jobsPerMinute,
         int $recentJobCount,
-        int $orphanedProcesses)
+        int $recentTime,
+        int $orphanedProcesses,
+        string $hostname,
+        array $queueConfig)
     {
         $this->queueProcesses = $queueProcesses;
         $this->queueWorkload = $queueWorkload;
@@ -32,7 +38,10 @@ class HorizonStatsDto implements Arrayable
         $this->horizonRunning = $horizonRunning;
         $this->jobsPerMinute = $jobsPerMinute;
         $this->recentJobsCount = $recentJobCount;
+        $this->recentTime = $recentTime;
         $this->orphanedProcesses = $orphanedProcesses;
+        $this->hostname = $hostname;
+        $this->queueConfig = $queueConfig;
     }
 
     public function toArray()
@@ -45,7 +54,10 @@ class HorizonStatsDto implements Arrayable
             'horizon_running' => $this->horizonRunning,
             'jobs_per_minute' => $this->jobsPerMinute,
             'recent_jobs_count' => $this->recentJobsCount,
+            'recent_time' => $this->recentTime,
             'orphaned_processes' => $this->orphanedProcesses,
+            'hostname' => $this->hostname,
+            'queue_config' => $this->queueConfig,
         ];
     }
 }
