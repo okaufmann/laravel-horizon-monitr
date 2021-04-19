@@ -2,6 +2,8 @@
 
 namespace Okaufmann\LaravelHorizonMonitr\Monitr;
 
+use Illuminate\Http\Client\RequestException;
+use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Http;
 
 class Client
@@ -14,9 +16,15 @@ class Client
 
     public function sendHorizonStats(HorizonStatsDto $stats)
     {
-        $this->prepareRequest()
-            ->post("{$this->basePath}/api/horizon-stats", $stats->toArray())
-            ->throw();
+        try {
+            $this->prepareRequest()
+                ->post("{$this->basePath}/api/horizon-stats", $stats->toArray())
+                ->throw();
+        } catch (RequestException $ex) {
+            if ($ex->response->status() !== Response::HTTP_SERVICE_UNAVAILABLE) {
+                throw $ex;
+            }
+        }
     }
 
     protected function prepareRequest()
