@@ -20,6 +20,10 @@ class HorizonMonitr
 
     public function collectAndSendStats()
     {
+        if (! config('laravel-horizon-monitr.monitr.token')) {
+            throw new \Exception('Horizon Monitr: No token was set! Please follow install instructions to set this package up.');
+        }
+
         $stats = new HorizonStatsDto(
             $this->horizon->getCurrentProcessesPerQueue(),
             $this->horizon->getCurrentWorkload(),

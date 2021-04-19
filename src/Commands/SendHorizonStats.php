@@ -13,6 +13,12 @@ class SendHorizonStats extends Command
 
     public function handle()
     {
+        if (! config('laravel-horizon-monitr.monitr.token')) {
+            $this->error('Horizon Monitr: No token was set! Please follow install instructions to set this package up.');
+
+            return 1;
+        }
+
         HorizonMonitrFacade::collectAndSendStats();
     }
 }
